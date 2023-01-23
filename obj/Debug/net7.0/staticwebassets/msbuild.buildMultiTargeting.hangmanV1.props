@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\hangmanV1.props" />
+</Project>
