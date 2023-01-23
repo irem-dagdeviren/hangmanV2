@@ -49,7 +49,8 @@ partial class Program
 
     static void Main(string[] args)
     {
-
+        Console.WriteLine("");
+        Console.WriteLine("WELCOME TO HANGMAN");
         ServiceProvider serviceProvider = new ServiceCollection()
                                        .AddDbContext<DbContext>(options =>
                                         options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TutorialDB;Trusted_Connection=True;"), ServiceLifetime.Scoped, ServiceLifetime.Scoped)

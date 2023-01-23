@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace hangmanV1.Services
     {
-    public class LoginService
+    public class LoginService : ILoginService
         {
 
         WordDbContext _dbContext;

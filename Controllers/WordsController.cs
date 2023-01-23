@@ -29,17 +29,11 @@ namespace hangmanV1.Controllers
         public CheckAnswersResponseModel takeGuessAndCheck([FromBody] EnterGuessRequestModel enterguess)
             {
             var guesstaken = _controller.taketheguess(enterguess.letter);
-           
-                return _controller.checkTheGuessAnswers(enterguess.gameid, enterguess.letter);
+            return _controller.checkTheGuessAnswers(enterguess.gameid, enterguess.letter);
             }
 
         [HttpGet("start")]
-        public startResponseModel StartGame()
-            {
-            Console.WriteLine("");
-            Console.WriteLine("WELCOME TO HANGMAN");
-            return _controller.getRandomWord();
-            }
+        public startResponseModel StartGame()  { return _controller.getRandomWord(); }
        
         }
 }
