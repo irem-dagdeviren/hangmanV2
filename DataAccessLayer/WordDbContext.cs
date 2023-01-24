@@ -1,4 +1,5 @@
-﻿using hangmanV1.Model;
+﻿using deneme2.Model;
+using hangmanV1.Model;
 using hangmanV1.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 

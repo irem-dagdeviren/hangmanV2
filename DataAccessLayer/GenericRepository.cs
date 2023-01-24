@@ -56,11 +56,20 @@ namespace hangmanV1.DataAccessLayer
         }
         public virtual void Delete(TEntity entityToDelete)
         {
-            if (context.Entry(entityToDelete).State.Equals(EntityState.Detached))
+
+            try
             {
-                dbSet.Attach(entityToDelete);
+                if (context.Entry(entityToDelete).State.Equals(EntityState.Detached))
+                {
+                    dbSet.Attach(entityToDelete);
+                }
+                dbSet.Remove(entityToDelete);
             }
-            dbSet.Remove(entityToDelete);
+            catch(Exception ex) 
+            {
+                Console.WriteLine("entity cannot be null, check the ID");
+
+            }
         }
         public virtual void Update(TEntity entityToUpdate)
         {
