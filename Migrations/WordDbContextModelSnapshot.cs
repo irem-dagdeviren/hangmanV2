@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using hangmanV1.Context;
+using deneme2.Context;
 
 #nullable disable
 
-namespace hangmanV1.Migrations
+namespace deneme2.Migrations
 {
-    [DbContext(typeof(Context.WordDbContext))]
+    [DbContext(typeof(WordDbContext))]
     public class WordDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

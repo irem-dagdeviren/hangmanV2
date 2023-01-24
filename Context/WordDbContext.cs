@@ -1,16 +1,21 @@
-﻿using hangmanV1.Model;
-using hangmanV1.Model.Entity;
+﻿using deneme2.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
+using Microsoft.EntityFrameworkCore.Storage;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace hangmanV1.Context
+namespace deneme2.Context
 {
     public class WordDbContext : DbContext
     {
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
+
             var builder = new ConfigurationBuilder()
                                    .SetBasePath(Directory.GetCurrentDirectory())
                                    .AddJsonFile("appsettings.json");
@@ -19,22 +24,20 @@ namespace hangmanV1.Context
 
         }
 
-        
+        public WordDbContext() {
+            Console.WriteLine("dbcontext");
+        }
+
         public WordDbContext(DbContextOptions<WordDbContext> options)
         : base(options){
-            Console.WriteLine("dbcontext");
+            Console.WriteLine("dbcontext22222");
             Database.EnsureCreated(); 
         }
+
         public DbSet<Words> Words { get; set; }
         public DbSet<Game> Games { get; set; }  
         public DbSet<Guesses> Guesses { get; set; }
-        public DbSet<Users> Users { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
-            modelBuilder.Entity<Guesses>().Property(p => p.letter).HasMaxLength(1);
-            }
-
-        }
+       
+    }
 
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace hangmanV1.Model
+namespace deneme2.Model
 {
     public class Guesses
     {

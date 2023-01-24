@@ -1,12 +1,9 @@
-﻿using hangmanV1.Context;
-using hangmanV1.Model;
-using hangmanV1.Model.RequestModel;
-using hangmanV1.Model.ResponseModel;
+﻿using deneme2.Context;
+using deneme2.Model;
+using deneme2.Model.RequestModel;
+using deneme2.Model.ResponseModel;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +12,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace hangmanV1.Services
+namespace deneme2.Services
 {
-    public class WordService : IWordService
+    public class wordService
     {
 
         WordDbContext _dbContext;
-        public WordService(WordDbContext dbContext) { _dbContext = dbContext; }
-
+        public wordService(WordDbContext dbContext) { _dbContext = dbContext; }
         public bool checkTheGuess(string word, char letter) { return word.Contains(letter); }
         public IsGameOverResponseModel IsGameOver(int count)
         {
@@ -31,6 +27,7 @@ namespace hangmanV1.Services
             {
                 var response = new IsGameOverResponseModel
                 {
+
                     GameOver = true
                 };
                 return response;
@@ -39,6 +36,7 @@ namespace hangmanV1.Services
             {
                 var response = new IsGameOverResponseModel
                 {
+
                     GameOver = false
                 };
                 return response;
@@ -48,6 +46,7 @@ namespace hangmanV1.Services
         {
 
             List<string> words = new List<string>();
+
             int count = 5;
             foreach (var item in _dbContext.Words)
             {
@@ -70,12 +69,15 @@ namespace hangmanV1.Services
                     guess += "_";
 
             }
+
             Console.WriteLine(guess);
             Game game = new Game
             {
+
                 previousGuess = guess,
                 quesiton = random_word,
                 lifeCount = count
+
             };
             _dbContext.Games.Add(game);
             _dbContext.SaveChanges();
@@ -111,56 +113,54 @@ namespace hangmanV1.Services
 
         public CheckAnswersResponseModel checkTheGuessAnswers(int GameID, char letter)
         {
+
             Game? game = _dbContext.Games.FirstOrDefault(x => x.ID == GameID);
-            if (game == null)
+
+
+            string random_word = game.quesiton.ToString();
+            string guess = game.previousGuess.ToString();
+            int count = game.lifeCount;
+
+            if (checkTheGuess(random_word, letter))
+            {
+                Console.WriteLine("Correct");
+                for (int i = 0; i < random_word.Length; i++)
                 {
-                Console.WriteLine("CHECK YOUR GAME ID");
-                return new CheckAnswersResponseModel { };
+                    if (random_word[i] == letter)
+                    {
+                        guess = guess.Substring(0, i) + letter + guess.Substring(i + 1);
+
+                    }
                 }
+
+            }
             else
-                {
-                string random_word = game.quesiton.ToString();
-                string guess = game.previousGuess.ToString();
-                int count = game.lifeCount;
-                if (checkTheGuess(random_word, letter))
-                    {
-                    Console.WriteLine("Correct");
-                    for (int i = 0; i < random_word.Length; i++)
-                        {
-                        if (random_word[i] == letter)
-                            {
-                            guess = guess.Substring(0, i) + letter + guess.Substring(i + 1);
-
-                            }
-                        }
-                    }
-                else
-                    {
-                    Console.WriteLine("Wrong");
-                    count--;
-                    game.lifeCount = count;
-                    _dbContext.SaveChanges();
-                    if (IsGameOver(count).GameOver)
-                        {
-                        Console.WriteLine("Game Over");
-                        Console.WriteLine("the word was " + random_word);
-                        }
-                    else
-                        {
-                        Console.WriteLine("You have " + count + " guesses left");
-                        }
-                    }
-                Console.WriteLine(guess);
-                game.previousGuess = guess;
+            {
+                Console.WriteLine("Wrong");
+                count--;
+                game.lifeCount = count;
                 _dbContext.SaveChanges();
-
-                var response = new CheckAnswersResponseModel
-                    {
-                    lifeCount = count,
-                    guess = guess
-                    };
-                return response;
+                if (IsGameOver(count).GameOver)
+                {
+                    Console.WriteLine("Game Over");
+                    Console.WriteLine("the word was " + random_word);
                 }
+                else
+                {
+                    Console.WriteLine("You have " + count + " guesses left");
+                }
+            }
+            Console.WriteLine(guess);
+
+            game.previousGuess = guess;
+            _dbContext.SaveChanges();
+
+            var response = new CheckAnswersResponseModel
+            {
+                lifeCount = count,
+                guess = guess
+            };
+            return response;
 
         }
 

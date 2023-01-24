@@ -278,5 +278,3 @@ C:\Development\deneme2\obj\Debug\net7.0\refint\hangmanV1.dll
 C:\Development\deneme2\obj\Debug\net7.0\hangmanV1.pdb
 C:\Development\deneme2\obj\Debug\net7.0\hangmanV1.genruntimeconfig.cache
 C:\Development\deneme2\obj\Debug\net7.0\ref\hangmanV1.dll
-C:\Development\deneme2\bin\Debug\net7.0\EntityFramework.Exceptions.Common.dll
-C:\Development\deneme2\bin\Debug\net7.0\EntityFramework.Exceptions.SqlServer.dll

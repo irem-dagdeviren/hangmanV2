@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\deneme2\\hangmanV1.csproj": {}
+    "C:\\Development\\hangmanV2\\hangmanV1.csproj": {}
   },
   "projects": {
-    "C:\\Development\\deneme2\\hangmanV1.csproj": {
+    "C:\\Development\\hangmanV2\\hangmanV1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\deneme2\\hangmanV1.csproj",
+        "projectUniqueName": "C:\\Development\\hangmanV2\\hangmanV1.csproj",
         "projectName": "hangmanV1",
-        "projectPath": "C:\\Development\\deneme2\\hangmanV1.csproj",
+        "projectPath": "C:\\Development\\hangmanV2\\hangmanV1.csproj",
         "packagesPath": "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\deneme2\\obj\\",
+        "outputPath": "C:\\Development\\hangmanV2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\irem.dagdeviren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,10 +45,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "EntityFrameworkCore.Exceptions.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.3.1, )"
-            },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[5.2.9, )"

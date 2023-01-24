@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MVGHVm6TU5rLW1VGMLb9A5BcHC5M0OfbfBEE81cyt/yNEU1sOvtqCupliWGp2kVr+Z5328CgY8x8R8xnPqslig==",
+  "dgSpecHash": "B8WOm67OmTbKvYqDWKWI432z+RsB/1bM8+weCNUo8i+IjEH+02DPk2wJLDMTki1ZkiN8HKYaB6LdJu/qcWUMeQ==",
   "success": true,
-  "projectFilePath": "C:\\Development\\deneme2\\hangmanV1.csproj",
+  "projectFilePath": "C:\\Development\\hangmanV2\\hangmanV1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
-    "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\entityframeworkcore.exceptions.common\\6.0.3\\entityframeworkcore.exceptions.common.6.0.3.nupkg.sha512",
-    "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\entityframeworkcore.exceptions.sqlserver\\6.0.3.1\\entityframeworkcore.exceptions.sqlserver.6.0.3.1.nupkg.sha512",
     "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.2\\microsoft.aspnetcore.jsonpatch.7.0.2.nupkg.sha512",

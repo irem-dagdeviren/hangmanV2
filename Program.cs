@@ -1,7 +1,7 @@
 
-using hangmanV1.Context;
-using hangmanV1.Model;
-using hangmanV1.Services;
+using deneme2.Context;
+using deneme2.Model;
+using deneme2.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -13,11 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
 builder.Services.AddControllers();
 builder.Services.AddMvc();
 builder.Services.AddControllers();
-builder.Services.AddTransient<LoginService>();
-builder.Services.AddTransient<WordService>();
+builder.Services.AddScoped<wordService>();
 builder.Services.AddDbContext<WordDbContext>(options =>
     options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TutorialDB;Trusted_Connection=True;", builder => builder.EnableRetryOnFailure()));
    
@@ -49,18 +49,19 @@ partial class Program
 
     static void Main(string[] args)
     {
-        Console.WriteLine("");
-        Console.WriteLine("WELCOME TO HANGMAN");
+
+
+
         ServiceProvider serviceProvider = new ServiceCollection()
-                                       .AddDbContext<DbContext>(options =>
+                                       .AddDbContext<WordDbContext>(options =>
                                         options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TutorialDB;Trusted_Connection=True;"), ServiceLifetime.Scoped, ServiceLifetime.Scoped)
-                                       .AddTransient<WordService>()
-                                       .AddTransient<LoginService>()
+                                       .AddTransient<wordService>()
                                        .BuildServiceProvider();
 
 
-        WordService control = serviceProvider.GetService<WordService>();
-        LoginService logincontrol =serviceProvider.GetService<LoginService>();
+
+
+        wordService control = serviceProvider.GetService<wordService>();
 
        
             }

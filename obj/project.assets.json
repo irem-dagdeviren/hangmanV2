@@ -46,39 +46,6 @@
           }
         }
       },
-      "EntityFrameworkCore.Exceptions.Common/6.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.3"
-        },
-        "compile": {
-          "lib/net6.0/EntityFramework.Exceptions.Common.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/EntityFramework.Exceptions.Common.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
-      "EntityFrameworkCore.Exceptions.SqlServer/6.0.3.1": {
-        "type": "package",
-        "dependencies": {
-          "EntityFrameworkCore.Exceptions.Common": "6.0.3",
-          "Microsoft.Data.SqlClient": "4.1.0"
-        },
-        "compile": {
-          "lib/net6.0/EntityFramework.Exceptions.SqlServer.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/EntityFramework.Exceptions.SqlServer.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -3911,36 +3878,6 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
-      ]
-    },
-    "EntityFrameworkCore.Exceptions.Common/6.0.3": {
-      "sha512": "nciNKB1xMYO5a9P6rvLttCFVWa+2gwaEeuKtBaQqO24CnhNXudOZ13P1/6jSlcmy3TdbUbB1LEwJFec2n/zGrQ==",
-      "type": "package",
-      "path": "entityframeworkcore.exceptions.common/6.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "License.md",
-        "entityframeworkcore.exceptions.common.6.0.3.nupkg.sha512",
-        "entityframeworkcore.exceptions.common.nuspec",
-        "lib/net6.0/EntityFramework.Exceptions.Common.dll",
-        "lib/net6.0/EntityFramework.Exceptions.Common.pdb"
-      ]
-    },
-    "EntityFrameworkCore.Exceptions.SqlServer/6.0.3.1": {
-      "sha512": "bBsHUguCsH1jz2ZLGnjLJ0qxKi3QzZz4cyk675lo2cvUDmcK/XPx9NdYzrXkfI1gy/ZMutvdXftCoktz6S3Arg==",
-      "type": "package",
-      "path": "entityframeworkcore.exceptions.sqlserver/6.0.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "License.md",
-        "entityframeworkcore.exceptions.sqlserver.6.0.3.1.nupkg.sha512",
-        "entityframeworkcore.exceptions.sqlserver.nuspec",
-        "lib/net6.0/EntityFramework.Exceptions.SqlServer.dll",
-        "lib/net6.0/EntityFramework.Exceptions.SqlServer.pdb"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -11261,7 +11198,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "EntityFrameworkCore.Exceptions.SqlServer >= 6.0.3.1",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 7.0.2",
       "Microsoft.AspNetCore.OpenApi >= 7.0.2",
@@ -11275,19 +11211,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\": {}
+    "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\deneme2\\hangmanV1.csproj",
+      "projectUniqueName": "C:\\Development\\hangmanV2\\hangmanV1.csproj",
       "projectName": "hangmanV1",
-      "projectPath": "C:\\Development\\deneme2\\hangmanV1.csproj",
+      "projectPath": "C:\\Development\\hangmanV2\\hangmanV1.csproj",
       "packagesPath": "C:\\Users\\irem.dagdeviren\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\deneme2\\obj\\",
+      "outputPath": "C:\\Development\\hangmanV2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\irem.dagdeviren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11295,6 +11236,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11313,10 +11255,6 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "EntityFrameworkCore.Exceptions.SqlServer": {
-            "target": "Package",
-            "version": "[6.0.3.1, )"
-          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.9, )"

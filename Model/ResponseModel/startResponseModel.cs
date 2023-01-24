@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace hangmanV1.Model.ResponseModel
+namespace deneme2.Model.ResponseModel
 {
     public class startResponseModel
     {

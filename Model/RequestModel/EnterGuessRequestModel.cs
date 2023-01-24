@@ -1,4 +1,4 @@
-﻿namespace hangmanV1.Model.RequestModel
+﻿namespace deneme2.Model.RequestModel
 {
     public class EnterGuessRequestModel
     {

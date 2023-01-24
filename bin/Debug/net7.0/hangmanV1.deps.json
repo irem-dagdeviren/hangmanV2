@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v7.0": {
       "hangmanV1/1.0.0": {
         "dependencies": {
-          "EntityFrameworkCore.Exceptions.SqlServer": "6.0.3.1",
           "Microsoft.AspNet.WebApi.Client": "5.2.9",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.2",
           "Microsoft.AspNetCore.OpenApi": "7.0.2",
@@ -55,29 +54,6 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
-          }
-        }
-      },
-      "EntityFrameworkCore.Exceptions.Common/6.0.3": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.2"
-        },
-        "runtime": {
-          "lib/net6.0/EntityFramework.Exceptions.Common.dll": {
-            "assemblyVersion": "6.0.3.0",
-            "fileVersion": "6.0.3.0"
-          }
-        }
-      },
-      "EntityFrameworkCore.Exceptions.SqlServer/6.0.3.1": {
-        "dependencies": {
-          "EntityFrameworkCore.Exceptions.Common": "6.0.3",
-          "Microsoft.Data.SqlClient": "5.0.1"
-        },
-        "runtime": {
-          "lib/net6.0/EntityFramework.Exceptions.SqlServer.dll": {
-            "assemblyVersion": "6.0.3.1",
-            "fileVersion": "6.0.3.1"
           }
         }
       },
@@ -2430,20 +2406,6 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
-    },
-    "EntityFrameworkCore.Exceptions.Common/6.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nciNKB1xMYO5a9P6rvLttCFVWa+2gwaEeuKtBaQqO24CnhNXudOZ13P1/6jSlcmy3TdbUbB1LEwJFec2n/zGrQ==",
-      "path": "entityframeworkcore.exceptions.common/6.0.3",
-      "hashPath": "entityframeworkcore.exceptions.common.6.0.3.nupkg.sha512"
-    },
-    "EntityFrameworkCore.Exceptions.SqlServer/6.0.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-bBsHUguCsH1jz2ZLGnjLJ0qxKi3QzZz4cyk675lo2cvUDmcK/XPx9NdYzrXkfI1gy/ZMutvdXftCoktz6S3Arg==",
-      "path": "entityframeworkcore.exceptions.sqlserver/6.0.3.1",
-      "hashPath": "entityframeworkcore.exceptions.sqlserver.6.0.3.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace hangmanV1.Migrations
+namespace deneme2.Migrations
 {
     /// <inheritdoc />
     public partial class MyFirstMigration : Migration
