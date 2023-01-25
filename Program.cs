@@ -1,13 +1,8 @@
-
-using deneme2.Context;
-using deneme2.Model;
-using deneme2.Services;
-using Microsoft.AspNetCore.Mvc;
+using hangmanV1.Services;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-
+using hangmanV1.DataAccessLayer;
+using hangmanV1.Model.RequestModel;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,13 +12,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddMvc();
 builder.Services.AddControllers();
-builder.Services.AddScoped<wordService>();
+
 builder.Services.AddDbContext<WordDbContext>(options =>
     options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TutorialDB;Trusted_Connection=True;", builder => builder.EnableRetryOnFailure()));
    
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<WordService>();
+builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IValidator<EnterGuessRequestModel>, GuessValidator>();
+builder.Services.AddScoped<GuessValidator>();
 
 var app = builder.Build();
 
@@ -52,18 +51,18 @@ partial class Program
 
 
 
-        ServiceProvider serviceProvider = new ServiceCollection()
-                                       .AddDbContext<WordDbContext>(options =>
-                                        options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TutorialDB;Trusted_Connection=True;"), ServiceLifetime.Scoped, ServiceLifetime.Scoped)
-                                       .AddTransient<wordService>()
-                                       .BuildServiceProvider();
+        //ServiceProvider serviceProvider = new ServiceCollection()
+        //                               .AddDbContext<WordDbContext>(options =>
+        //                                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TutorialDB;Trusted_Connection=True;"), ServiceLifetime.Scoped, ServiceLifetime.Scoped)
+        //                               .AddScoped<WordService>()
+        //                               .BuildServiceProvider();
 
 
 
 
-        wordService control = serviceProvider.GetService<wordService>();
+        //WordService control = serviceProvider.GetService<WordService>();
 
-       
-            }
+
+        }
         }
     

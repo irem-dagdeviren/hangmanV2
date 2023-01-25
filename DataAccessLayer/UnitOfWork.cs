@@ -1,6 +1,4 @@
-﻿using deneme2.Model;
-using hangmanV1.Context;
-using hangmanV1.DataAccessLayer;
+﻿using hangmanV1.DataAccessLayer;
 using hangmanV1.Model;
 using hangmanV1.Model.Entity;
 using System;

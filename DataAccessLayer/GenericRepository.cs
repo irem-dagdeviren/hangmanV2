@@ -1,14 +1,12 @@
-﻿using hangmanV1.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Linq.Expressions;
-
 
 namespace hangmanV1.DataAccessLayer
 
 {
-    public class GenericRepository<TEntity> where TEntity : class
-    {
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+        {
         internal WordDbContext context;
         internal DbSet<TEntity> dbSet;
         public GenericRepository(WordDbContext context)
@@ -76,5 +74,15 @@ namespace hangmanV1.DataAccessLayer
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = (Microsoft.EntityFrameworkCore.EntityState)EntityState.Modified;
         }
-    }
+
+        Task<TEntity> IGenericRepository<TEntity>.GetByID(object id)
+            {
+            throw new NotImplementedException();
+            }
+
+        public void InsertAsync(TEntity entity)
+            {
+            throw new NotImplementedException();
+            }
+        }
 }

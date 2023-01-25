@@ -1,8 +1,8 @@
-﻿namespace deneme2.Model.ResponseModel
+﻿namespace hangmanV1.Model.ResponseModel
 {
     public class EnterGuessResponseModel
     {
 
-        public char letter { get; set; }
+        public string letter { get; set; }
     }
 }

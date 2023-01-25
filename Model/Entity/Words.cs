@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace deneme2.Model
+namespace hangmanV1.Model
 {
     public class Words
     {

@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace deneme2.Model
+namespace hangmanV1.Model
 {
     public class Guesses
-    {
+        {
         [Key]
         public int GuessID { get; set; }
-        public char letter { get; set; }
-    }
+        public string letter { get; set; }
+
+        }
 }

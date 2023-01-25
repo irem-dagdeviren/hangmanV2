@@ -1,4 +1,4 @@
-﻿using hangmanV1.Context;
+﻿using hangmanV1.DataAccessLayer;
 using hangmanV1.Model.Entity;
 using hangmanV1.Model.ResponseModel;
 using Microsoft.Data.SqlClient;

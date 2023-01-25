@@ -1,10 +1,10 @@
-﻿using deneme2.Model;
+﻿
 using hangmanV1.Model;
 using hangmanV1.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace hangmanV1.Context
+namespace hangmanV1.DataAccessLayer
 {
     public class WordDbContext : DbContext
     {
@@ -26,7 +26,7 @@ namespace hangmanV1.Context
             Database.EnsureCreated(); 
         }
 
-        public WordDbContext() : base() { }
+        public WordDbContext() { }
         public DbSet<Words> Words { get; set; }
         public DbSet<Game> Games { get; set; }  
         public DbSet<Guesses> Guesses { get; set; }

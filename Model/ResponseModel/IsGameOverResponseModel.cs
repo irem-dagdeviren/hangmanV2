@@ -1,4 +1,4 @@
-﻿namespace deneme2.Model.ResponseModel
+﻿namespace hangmanV1.Model.ResponseModel
 {
     public class IsGameOverResponseModel
     {
